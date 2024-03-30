@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Camera Calibration with OpenCV.js</title>
+    <script src="https://docs.opencv.org/master/opencv.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>You can go to https://calib.io/pages/camera-calibration-pattern-generator to generate Checkerboard calib-pattern </h1>
+    <div>
+        <label for="width">棋盘格列数:</label>
+        <input type="number" id="width" name="width" min="1" value="9">
+    </div>
+    <div>
+        <label for="height">棋盘格行数:</label>
+        <input type="number" id="height" name="height" min="1" value="6">
+    </div>
+    <div>
+        <label for="squareSize">每个格子的尺寸 (mm):</label>
+        <input type="number" id="squareSize" name="squareSize" min="1" value="23">
+    </div>
+    <div>
+        <input type="file" id="fileInput" multiple accept="image/*">
+    </div>
+    <button id="calibrate">开始标定</button>
+
+    <h2>内参矩阵</h2>
+    <pre id="cameraMatrix"></pre>
+
+    <h2>重投影误差图</h2>
+    <canvas id="reprojectionErrorChart" width="400" height="400"></canvas>
+
+    <script src="scripts/calib.js"></script>
+</body>
+</html>

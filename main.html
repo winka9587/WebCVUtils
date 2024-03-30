@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Scene</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+        #action-info {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="file-input" />
+    <div id="camera-info" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 10px; z-index: 100;">Current Camera: cam2</div>
+    <div id="action-info"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/loaders/OBJLoader.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/TransformControls.js"></script>
+    <script src="https://cdn.rawgit.com/dataarts/dat.gui/master/build/dat.gui.min.js"></script>
+
+    <!-- <script type="module">
+        // 导入Three.js的主模块
+        import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
+      
+        // 导入Three.js的附加模块
+        import { OBJLoader } from 'https://unpkg.com/three/examples/jsm/loaders/OBJLoader.js';
+        import { OrbitControls } from 'https://unpkg.com/three/examples/jsm/controls/OrbitControls.js';
+        import { TransformControls } from 'https://unpkg.com/three/examples/jsm/controls/TransformControls.js';
+      
+        // 导入dat.GUI
+        // 请确保dat.GUI的这个版本支持ES模块，可能需要查找对应的CDN或包版本
+        import { GUI } from 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.module.js';
+      
+        // 你的Three.js代码...
+    </script> -->
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.162.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.162.0/examples/jsm/",
+            "dat.gui": "https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.module.js"
+          }
+        }
+    </script>
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
